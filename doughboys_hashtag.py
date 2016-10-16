@@ -71,7 +71,7 @@ def main():
     create_download_directory()
 
     # download all of the episodes to a local folder
-    for e in episodes[:5]:
+    for e in episodes:
         print 'about to download {0}'.format(e['title'])
         start_time = datetime.datetime.now()
         local_filename = download_file(e['url'])
@@ -81,11 +81,6 @@ def main():
         print 'Elapsed time {0}'.format(str(end_time - start_time))
         print '------------------------------------------'
         print '------------------------------------------'
-
-
-
-
-
 
 
 
