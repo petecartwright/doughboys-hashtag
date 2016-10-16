@@ -72,13 +72,16 @@ def main():
 
     # download all of the episodes to a local folder
     for e in episodes:
-        print u'about to download {0}'.format(e['title'])
-        start_time = datetime.datetime.now()
-        local_filename = download_file(e['url'])
-        e['local_path'] = local_filename
-        end_time = datetime.datetime.now()
-        print u'done downloading {0}'.format(e['title'])    
-        print 'Elapsed time {0}'.format(str(end_time - start_time))
+        if os.path.isfile('downloads/'+e['filename']):
+            print 'File exists for {0}'.format(e['title'])
+        else:
+            print u'about to download {0}'.format(e['title'])
+            start_time = datetime.datetime.now()
+            local_filename = download_file(e['url'])
+            e['local_path'] = local_filename
+            end_time = datetime.datetime.now()
+            print u'done downloading {0}'.format(e['title'])    
+            print 'Elapsed time {0}'.format(str(end_time - start_time))
         print '------------------------------------------'
         print '------------------------------------------'
 
@@ -86,33 +89,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
