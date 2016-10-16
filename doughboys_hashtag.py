@@ -72,12 +72,12 @@ def main():
 
     # download all of the episodes to a local folder
     for e in episodes:
-        print 'about to download {0}'.format(e['title'])
+        print u'about to download {0}'.format(e['title'])
         start_time = datetime.datetime.now()
         local_filename = download_file(e['url'])
         e['local_path'] = local_filename
         end_time = datetime.datetime.now()
-        print 'done downloading {0}'.format(e['title'])    
+        print u'done downloading {0}'.format(e['title'])    
         print 'Elapsed time {0}'.format(str(end_time - start_time))
         print '------------------------------------------'
         print '------------------------------------------'
