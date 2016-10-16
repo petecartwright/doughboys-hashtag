@@ -73,7 +73,7 @@ def main():
     # download all of the episodes to a local folder
     for e in episodes:
         if os.path.isfile('downloads/'+e['filename']):
-            print 'File exists for {0}'.format(e['title'])
+            print u'File exists for {0}'.format(e['title'])
         else:
             print u'about to download {0}'.format(e['title'])
             start_time = datetime.datetime.now()
